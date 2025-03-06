@@ -1,0 +1,86 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMpXHDU0UypTaqoxl4CenjL",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/murilomco/ALGESTDADOS_20251/blob/main/Aula%203/%20Murilo/%2006/03\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 13,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "collapsed": true,
+        "id": "rclWt37zRIxH",
+        "outputId": "65852d73-9677-478e-a2b5-7a7cd2a7c1f5"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "digite o seu lindo nome:murilo\n",
+            "Digite o nome da sua linda cidade:linhares\n",
+            "Quando você nasceu? (DD/MM/YYYY)06/12/2005\n",
+            "Seu nome é murilo, sua cidade é linhares e sua idade é 19 anos\n"
+          ]
+        }
+      ],
+      "source": [
+        "#criar um programa que retorne o nome, a cidade e a idade de um usuário atráves de sua data de nascimento.\n",
+        "#importando a biblioteca date time\n",
+        "from datetime import datetime\n",
+        "\n",
+        "\n",
+        "# atribui um valor textual a variável nome\n",
+        "nome= input('digite o seu lindo nome:')\n",
+        "\n",
+        "\n",
+        "# atribui um valor textual a variável cidade\n",
+        "cidade= input('Digite o nome da sua linda cidade:')\n",
+        "\n",
+        "\n",
+        "# Data de nascimento em formato de texto\n",
+        "data_nasc= input('Quando você nasceu? (DD/MM/YYYY)')\n",
+        "\n",
+        "\n",
+        "# convertendo a data_nasc para o formato de data\n",
+        "data_conv = datetime.strptime(data_nasc, '%d/%m/%Y')\n",
+        "\n",
+        "\n",
+        "#pegando do sistema a data de hoje\n",
+        "hoje = datetime.now()\n",
+        "\n",
+        "\n",
+        "#Idade = data de hoje - data de nascimento, em dias, dividido por 365 dias do ano\n",
+        "idade = (hoje - data_conv).days //365\n",
+        "\n",
+        "\n",
+        "print(f'Seu nome é {nome}, sua cidade é {cidade} e sua idade é {idade} anos')\n"
+      ]
+    }
+  ]
+}
